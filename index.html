@@ -1,330 +1,84 @@
-<!DOCTYPE html>
-<!-- saved from url=(0043)http://127.0.0.1:5500/sample.portfolio.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Kaustubh Portfolio</title>
-
-<style>
-body {
-    margin: 0;
-    font-family: Arial;
-    background: #0f172a;
-    color: white;
-}
-
-
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-}
-
-
-.logo img {
-    width: 180px;
-    margin-bottom: 10px;
-}
-
-
-.profile img {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    border: 4px solid #38bdf8;
-    object-fit: cover;
-    margin: 10px auto;
-}
-
-
-.card {
-    background: white;
-    color: black;
-    padding: 15px;
-    border-radius: 10px;
-    margin: 10px 0;
-}
-
-.box {
-    background: #38bdf8;
-    padding: 15px;
-    border-radius: 10px;
-    margin: 10px 0;
-    cursor: pointer;
-    transition: 0.3s;
-    color: black;
-}
-
-.box:hover {
-    background: #1e40af;
-    color: white;
-}
-
-/* Buttons */
-.btn {
-    background: #22c55e;
-    padding: 12px;
-    border-radius: 10px;
-    cursor: pointer;
-    margin: 10px auto;
-    width: 200px;
-    font-weight: bold;
-    transition: 0.3s;
-    color: black;
-}
-
-.btn:hover {
-    background: #15803d;
-    color: white;
-}
-
-/* Hidden */
-.hidden {
-    display: none;
-}
-
-/* Projects */
-.project {
-    background: #38bdf8;
-    padding: 15px;
-    border-radius: 10px;
-    margin: 15px 0;
-    transition: 0.3s;
-    color: black;
-}
-
-.project img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.project:hover {
-    background: #1e40af;
-    color: white;
-}
-</style>
-
-<script>
-function showSection(id) {
-    document.getElementById("home").style.display = "none";
-    document.getElementById("modules").style.display = "none";
-    document.getElementById("contact").style.display = "none";
-    document.getElementById(id).style.display = "block";
-}
-
-function toggle(id) {
-    var x = document.getElementById(id);
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
-}
-</script>
-
-</head>
-
-<body>
-
-<!-- HOME -->
-<div id="home" class="container">
-
-<!-- ✅ LOGO -->
-<div class="logo">
-    <img src="./index_files/logo.jpeg" alt="FabLab Logo">
-</div>
-
-<!-- ✅ PROFILE PHOTO -->
-<div class="profile">
-    <img src="./index_files/photo.jpeg" alt="Profile Photo">
-</div>
-
-<h1>Hello, I'm Kaustubh Bule</h1>
-
-<!-- BUTTONS -->
-<div class="btn" onclick="showSection(&#39;modules&#39;)">View My Work</div>
-<div class="btn" onclick="showSection(&#39;contact&#39;)">Contact</div>
-
-<!-- PERSONAL INFO -->
-<div class="box" onclick="toggle(&#39;info&#39;)">Personal Information</div>
-<div id="info" class="card hidden">
-<p>Name: Kaustubh Pandit Bule</p>
-<p>Phone: 9209315142</p>
-<p>Email: kaustubhbule1@gmail.com</p>
-<p>Address: Mane Nagar Shegaon</p>
-</div>
-
-<!-- AGREEMENT -->
-<div class="box" onclick="toggle(&#39;agreement&#39;)">FabLab Student Agreement</div>
-<div id="agreement" class="card hidden" style="display: none;">
-<p>📜 📜 FabLab Student Agreement
-
-The FabLab, SSGMCE is responsible for:
-	•	Teaching principles and practices of digital fabrication
-	•	Arranging lectures, recitations, meetings, and events for the class
-	•	Evaluating and providing feedback on student work
-	•	Offering clear standards for completing assignments
-	•	Certifying and archiving student progress
-	•	Supervising class preparation
-	•	Reviewing prospective students, instructors, and labs
-	•	Providing central staff and infrastructure for students, instructors, and labs
-	•	Fund-raising for costs not covered by student tuition
-	•	Managing and reporting on the program’s finances, results, and impacts
-	•	Publicizing the program
-
-
-I am a FabLab, SSGMCE student, responsible for:
-	•	Attending class lectures and participating in reviews
-	•	Developing and documenting projects assigned to introduce and demonstrate skills
-	•	Honestly reporting on my work, and appropriately attributing the work of others
-	•	Working safely
-	•	Leaving workspaces in the same (or better) condition than I found them
-	•	Participating in the upkeep of my lab
-	•	Ensuring that my tuition to cover local and central class costs is covered
-	•	Following locally applicable health and safety guidance
-	•	Promoting a respectful environment free of harassment and discrimination
-
-
-✍️ Declaration
-
-Signed by committing this file in my repository,
-
-Name: kaustubh pandit bule</p>
-</div>
+<html>
+    <body>
+<h2>REGESTRATION FORM</h2>
 
-<div class="card">
-<h2>About Me</h2>
-<p>
-I'm a first year electronics and telecommunication engineering student at SSGMCE Shegaon.
-I've completed web development course and have basic knowledge about PCB design.
-I'm looking to grow my skills through hands-on projects.
-</p>
-</div>
-
-</div>
-
-<!-- MODULES -->
-<div id="modules" class="container hidden">
-
-<h1>Modules</h1>
-<div class="btn" onclick="showSection(&#39;home&#39;)">⬅ Back</div>
-
-<div class="box" onclick="toggle(&#39;webDev&#39;)">Web Development</div>
-
-<div id="webDev" class="hidden">
-
-<h2>All 7 Days Work</h2>
-
-
-<div class="project">
-<img src="./index_files/day1.png">
-<h3>Day 1 – Basic HTML</h3>
-<p>Basic tags like p, b, i, marquee.</p>
-<a href="http://127.0.0.1:5500/day1.html" target="_blank">Open Project</a>
-</div>
-
-<div class="project">
-<img src="./index_files/day2.png">
-<h3>Day 2 – Image,audio &amp; video</h3>
-<p>Images, links, video,.</p>
-<a href="http://127.0.0.1:5500/day2.html" target="_blank">Open Project</a>
-</div>
-
-<div class="project">
-
-<h3>Day 3 – table</h3>
-<p>table formation</p>
-<a href="http://127.0.0.1:5500/table.html" target="_blank">Open Project</a>
-</div>
-
-<div class="project">
-<img src="./index_files/day3.png">
-<h3>Day 4 – Forms</h3>
-<p>Form creation.</p>
-<a href="http://127.0.0.1:5500/day3.html" target="_blank">Open Project</a>
-</div>
-
-<div class="project">
-<img src="./index_files/day4.png">
-<h3>Day 5 – Layout</h3>
-<p>Header, nav, footer.</p>
-<a href="http://127.0.0.1:5500/day4.html" target="_blank">Open Project</a>
-</div>
-
-<div class="project">
-
-<h3>Day 6 – Flexbox</h3>
-<p>Box model and layout.</p>
-<a href="http://127.0.0.1:5500/day5.html" target="_blank">Open Project</a>
-</div>
-
-
- <div class="project">
-<h3>Day 7  -  To-Do App</h3>
-<p>Final project.</p>
-<a href="http://127.0.0.1:5500/todolist.html" target="_blank">Open Project</a>
-</div>
-
-
-
-
-
-
-</div>
-</div>
-
-<!-- CONTACT -->
-<div id="contact" class="container hidden">
-
-<h1>Contact</h1>
-
-<div class="card">
-<p>Name: Kaustubh Pandit Bule</p>
-<p>Phone: 9209315142</p>
-<p>Email: kaustubhbule1@gmail.com</p>
-<p>Address: Mane Nagar Shegaon</p>
-</div>
-
-<div class="btn" onclick="showSection(&#39;home&#39;)">⬅ Back</div>
-
-</div>
-
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
-
-</body></html>
+
+       <center> <form action="#" method="post" enctype="multipart/formdata"></form>
+        Full Name :
+        <input type="text" name="fullname" placeholder="enter your full name">
+        <br><br>
+
+
+
+        <passward>
+            PASSWARD :
+        <input type="passward" name="passward" minilength="6"required>
+        </passward>
+        <br><br>
+
+
+
+        <email>
+            EMAIL
+            <input type="email" name="email" required>
+        </email>
+        <br><br>
+
+
+        <number>
+            MOBILE NUMBER:
+            <input type="number" name="number" placeholder="10 digits">
+        </number>
+        <br><br>
+
+        <range>
+            SATISFACTION LEVEL :
+            <input type range="range" name="range" min="0" max="10">
+            </range>
+         <br><br>
+
+
+          <gender>
+            GENDER :
+            <input type="ratio" name="gender" value="male">
+            <input type="ratio" name="gender" value="female">
+            <input type="ratio" name="gender" value="other">
+        </gender>
+        <br><br>
+
+
+          <city>
+            CITY :
+            <slect NAME="city">
+            <option value="pune"></option>
+                <option value="mumbai"></option>
+                <option value="nagpur"></option></slect>
+          </city>
+          <br><br>
+
+
+
+<multiselect-dropdown>
+    SUBJECT [SELECT MULTIPLE] :
+    <select name="subject" multiple >
+        <option value="maths"> Mathematics</option>
+        <option value="physics">physics</option>
+        <option value="chemistry">chemistry</option>
+        <option value="computer">computer</option>
+</multiselect-dropdown>
+<br><br>
+
+<file-upload>
+    UPLOAD PROFILE PICTURE :
+    <input type="file" name="profile" accept="image/*">
+    <br><br>
+</file-upload>
+<buttons>
+    <input type="submit" value="submit">
+    <input type="reset" value="reset">
+</buttons>
+
+
+
+    </body>
+</html>
