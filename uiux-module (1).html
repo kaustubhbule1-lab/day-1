@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UI/UX Design Module — Kaustubh Bule</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0f;--surface:#12121a;--surface2:#1a1a26;--accent:#6c63ff;--text:#e8e8f0;--muted:#888899;--border:rgba(108,99,255,0.2);--glow:0 0 40px rgba(108,99,255,0.15)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(10,10,15,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;align-items:center;gap:10px}.nav-logo img{height:40px;width:40px;object-fit:contain;border-radius:8px}
+.nav-logo span{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--accent)}
+.nav-back{color:var(--muted);text-decoration:none;font-size:.88rem;font-weight:500;transition:color .2s}
+.nav-back:hover{color:var(--accent)}
+.hero{min-height:38vh;display:flex;align-items:flex-end;padding:120px 32px 52px;background:radial-gradient(ellipse at 60% 40%,rgba(108,99,255,.13) 0%,transparent 65%),radial-gradient(ellipse at 10% 90%,rgba(255,101,200,.07) 0%,transparent 50%);border-bottom:1px solid var(--border)}
+.hero-inner{max-width:1100px;margin:0 auto;width:100%}
+.mod-tag{display:inline-block;background:rgba(108,99,255,.15);border:1px solid var(--accent);color:var(--accent);padding:5px 14px;border-radius:20px;font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px}
+.mod-title{font-family:'Syne',sans-serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:800;line-height:1.1;margin-bottom:14px}
+.mod-title span{color:var(--accent)}
+.mod-desc{color:var(--muted);font-size:1rem;line-height:1.7;max-width:600px}
+.meta-row{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap}
+.meta-pill{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:7px 16px;font-size:.78rem;color:var(--muted)}
+.meta-pill strong{color:var(--text)}
+.content{padding:60px 32px;max-width:1100px;margin:0 auto}
+.back-btn{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid var(--border);color:var(--muted);padding:10px 22px;border-radius:8px;text-decoration:none;font-size:.88rem;font-weight:500;transition:all .2s;margin-bottom:44px}
+.back-btn:hover{border-color:var(--accent);color:var(--accent)}
+.section-head{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:28px}
+.day-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;overflow:hidden;margin-bottom:24px;transition:border-color .2s}
+.day-card:hover{border-color:rgba(108,99,255,.45)}
+.day-top{display:flex;align-items:center;gap:14px;padding:22px 26px 18px;flex-wrap:wrap}
+.day-num{background:var(--accent);color:#fff;font-family:'Syne',sans-serif;font-weight:800;font-size:.78rem;padding:5px 14px;border-radius:20px;white-space:nowrap;letter-spacing:.05em}
+.day-title-text{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem}
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin-left:auto}
+.tag{font-size:.68rem;font-weight:600;padding:3px 10px;border-radius:10px;border:1px solid}
+.tp{color:#a78bfa;border-color:rgba(167,139,250,.3);background:rgba(167,139,250,.08)}
+.tb{color:#60a5fa;border-color:rgba(96,165,250,.3);background:rgba(96,165,250,.08)}
+.tg{color:#34d399;border-color:rgba(52,211,153,.3);background:rgba(52,211,153,.08)}
+.tk{color:#f472b6;border-color:rgba(244,114,182,.3);background:rgba(244,114,182,.08)}
+.ty{color:#fbbf24;border-color:rgba(251,191,36,.3);background:rgba(251,191,36,.08)}
+.hr{height:1px;background:var(--border);margin:0 26px}
+.day-body{padding:20px 26px 24px;display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+.day-body.full{grid-template-columns:1fr}
+.day-text{color:var(--muted);font-size:.91rem;line-height:1.8}
+.day-text p{margin-bottom:10px}.day-text p:last-child{margin-bottom:0}
+.day-text ul{padding-left:17px;margin-top:6px}.day-text ul li{margin-bottom:5px}
+.day-text strong{color:var(--text)}
+.img-wrap{border-radius:10px;overflow:hidden;border:1px solid var(--border)}
+.img-wrap img{width:100%;height:210px;object-fit:cover;display:block;transition:transform .3s}
+.img-wrap:hover img{transform:scale(1.03)}
+footer{text-align:center;padding:28px;color:var(--muted);font-size:.82rem;border-top:1px solid var(--border);margin-top:40px}
+@media(max-width:768px){
+  nav{padding:12px 16px}
+  .hero{padding:100px 16px 40px}
+  .content{padding:40px 16px}
+  .day-top{padding:16px 16px 12px}
+  .tags{margin-left:0}
+  .hr{margin:0 16px}
+  .day-body{grid-template-columns:1fr;padding:16px 16px 20px}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">
+    <img src="logo.jpeg" alt="FabLab Logo">
+    <span>FabLab Portfolio</span>
+  </div>
+  <a href="index.html" class="nav-back">← Back to Portfolio</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="mod-tag">Module 02 · UI/UX Design</span>
+    <h1 class="mod-title">UI/UX Design<br><span>with Figma</span></h1>
+    <p class="mod-desc">Exploring the principles of user interface and user experience design using Figma — from basic tools and frames to real project building, prototyping, animation, and creating an original app design.</p>
+    <div class="meta-row">
+      <div class="meta-pill"><strong>Tool:</strong> Figma</div>
+      <div class="meta-pill"><strong>Duration:</strong> 5 Days</div>
+      <div class="meta-pill"><strong>Focus:</strong> UI Design · Prototyping · Own Project</div>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <a href="index.html" class="back-btn">← Back to Portfolio</a>
+  <div class="section-head">📅 Day-by-Day Progress</div>
+
+  <!-- DAY 1 -->
+  <div class="day-card">
+    <div class="day-top">
+      <span class="day-num">DAY 01</span>
+      <div class="day-title-text">Introduction to Figma &amp; UI Design Theory</div>
+      <div class="tags"><span class="tag tp">Figma</span><span class="tag tb">UI Theory</span></div>
+    </div>
+    <div class="hr"></div>
+    <div class="day-body">
+      <div class="day-text">
+        <p><strong>Getting Started with Figma</strong></p>
+        <p>On Day 1, I logged into Figma for the first time and set up my workspace. I explored the dashboard, understood how projects and files are organized, and got familiar with the interface. I also went through the foundational theory of UI/UX design — understanding the difference between User Interface (UI) and User Experience (UX), the importance of user-centered design, and key principles like visual hierarchy, consistency, contrast, and alignment.</p>
+        <ul>
+          <li>Logged into Figma and explored the dashboard &amp; recent projects</li>
+          <li>Understood the difference between UI and UX</li>
+          <li>Learned design principles: hierarchy, contrast, alignment</li>
+          <li>Browsed community templates and resources in Figma</li>
+        </ul>
+      </div>
+      <div class="img-wrap">
+        <img src="uiux_day1.jpeg" alt="Day 1 - Figma Dashboard">
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day-card">
+    <div class="day-top">
+      <span class="day-num">DAY 02</span>
+      <div class="day-title-text">Exploring Figma Tools — Frames, Shapes &amp; Text</div>
+      <div class="tags"><span class="tag tg">Frames</span><span class="tag tb">Shapes</span><span class="tag tp">Typography</span></div>
+    </div>
+    <div class="hr"></div>
+    <div class="day-body">
+      <div class="day-text">
+        <p><strong>Hands-on with All Core Figma Tools</strong></p>
+        <p>On Day 2, I explored all of Figma's core tools practically. I learned how to create frames for different device sizes (MacBook Pro 16", iPhone, etc.) and work within the canvas. I practiced drawing basic shapes — rectangles, ellipses — and understood resizing, aligning, and positioning them. I also learned how to add and style text, choose fonts, apply fill colors, and work with the properties panel.</p>
+        <ul>
+          <li>Created frames for MacBook Pro 16" and mobile screen sizes</li>
+          <li>Drew and resized rectangles and ellipses (200×200 dimensions)</li>
+          <li>Styled text with different fonts, weights, and sizes</li>
+          <li>Applied solid colors and fills to shapes</li>
+          <li>Used alignment and distribution tools for clean layouts</li>
+        </ul>
+      </div>
+      <div class="img-wrap">
+        <img src="uiux_day2.jpeg" alt="Day 2 - Shapes and Frames in Figma">
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="day-card">
+    <div class="day-top">
+      <span class="day-num">DAY 03</span>
+      <div class="day-title-text">Red Bull Ad Project — Setup &amp; Design</div>
+      <div class="tags"><span class="tag tk">Project</span><span class="tag ty">Red Bull</span><span class="tag tb">Layout</span></div>
+    </div>
+    <div class="hr"></div>
+    <div class="day-body">
+      <div class="day-text">
+        <p><strong>Starting the First Real Design Project</strong></p>
+        <p>On Day 3, I started my first real Figma design project — a Red Bull Advertisement UI. I set up the project file, chose the right frame, and began designing the layout with the Red Bull brand color theme. While building this project I discovered many new Figma features like grouping elements, using the layers panel, working with components, and importing images. This was a great hands-on experience applying design principles to a real product.</p>
+        <ul>
+          <li>Created the Red Bull Ad project file and set up frames</li>
+          <li>Established brand color palette and visual theme</li>
+          <li>Worked on layout composition and visual hierarchy</li>
+          <li>Learned grouping, layers panel, and image import</li>
+          <li>Explored button frames with different text styles</li>
+        </ul>
+      </div>
+      <div class="img-wrap">
+        <img src="uiux_day3.jpeg" alt="Day 3 - Red Bull Project Setup">
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 4 -->
+  <div class="day-card">
+    <div class="day-top">
+      <span class="day-num">DAY 04</span>
+      <div class="day-title-text">Red Bull Ad — Completed with Prototype &amp; Animation</div>
+      <div class="tags"><span class="tag ty">Prototype</span><span class="tag tk">Animation</span><span class="tag tg">Interactions</span></div>
+    </div>
+    <div class="hr"></div>
+    <div class="day-body">
+      <div class="day-text">
+        <p><strong>Completing the Project &amp; Adding Animations</strong></p>
+        <p>On Day 4, I completed the Red Bull Advertisement design — creating 3 product variants (Sugarfree, Energy Drink, Zero) each with their own frame and color identity. I then switched to Prototype mode and learned how to connect frames with interaction triggers. I explored various animation types — Smart Animate, Dissolve, Slide In — and built an interactive flow that lets users switch between the three Red Bull variants smoothly.</p>
+        <ul>
+          <li>Completed 3 Red Bull product variant screens in Figma</li>
+          <li>Applied consistent branding across all 3 frames</li>
+          <li>Switched to Prototype mode and connected all frames</li>
+          <li>Added Smart Animate and Dissolve transitions between screens</li>
+          <li>Previewed the full interactive prototype flow</li>
+        </ul>
+      </div>
+      <div class="img-wrap">
+        <img src="uiux_day4.jpeg" alt="Day 4 - Red Bull Completed with 3 Variants">
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 5 -->
+  <div class="day-card">
+    <div class="day-top">
+      <span class="day-num">DAY 05</span>
+      <div class="day-title-text">Own Project — Original UI Design</div>
+      <div class="tags"><span class="tag tp">Own Project</span><span class="tag tg">Creative</span><span class="tag tb">UI Design</span></div>
+    </div>
+    <div class="hr"></div>
+    <div class="day-body">
+      <div class="day-text">
+        <p><strong>Building My Own Original UI Design in Figma</strong></p>
+        <p>On Day 5, I applied everything I learned throughout the module to build my very own original UI design project in Figma. This was an independent creative exercise where I chose my own concept, designed the screens from scratch, and focused on making the UI visually appealing, consistent, and user-friendly. I put into practice all the skills — frames, layout, typography, color, components, and prototype interactions — learned over the previous 4 days.</p>
+        <ul>
+          <li>Conceptualized and planned an original app UI idea</li>
+          <li>Designed screens from scratch using Figma tools</li>
+          <li>Applied consistent color palette, typography, and spacing</li>
+          <li>Added prototype interactions for the user flow</li>
+          <li>Completed a fully interactive prototype of my own design</li>
+        </ul>
+      </div>
+      <div class="img-wrap">
+        <img src="uiux_day5.jpeg" alt="Day 5 - Own Project">
+      </div>
+    </div>
+  </div>
+
+</div>
+<footer><strong>Kaustubh Bule</strong> · Digital FabLab Portfolio · UI/UX Design Module · 2025</footer>
+</body>
+</html>
